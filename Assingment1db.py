@@ -3,7 +3,6 @@ import seaborn as sns
 import pandas as pd
 import time
 import plotly.express as px
-from streamlit_gsheets import GSheetsConnection
 import random
 import matplotlib.pyplot as plt
 
@@ -12,17 +11,15 @@ st.set_page_config(page_title="Diamond Market Analysis", layout="wide")
 st.title("Database Design Questions: Diamond Market Analysis")
 st.write("Data automatically updates when Google Sheet changes")
 
-conn = st.connection("gsheets", type=GSheetsConnection)
-
-diamond_data = conn.read(spreadsheet="https://docs.google.com/spreadsheets/d/1UFaq5QBW6F1ulq38_FTOjRy-qDZQPosi4Zc10SbZG3U/edit")
-
+csv_url = "https://docs.google.com/spreadsheets/d/1UFaq5QBW6F1ulq38_FTOjRy-qDZQPosi4Zc10SbZG3U/export?format=csv"
+diamond_data = pd.read_csv(csv_url)
 diamond_data["carat"] = pd.to_numeric(diamond_data["carat"], errors="coerce")
 diamond_data["price"] = pd.to_numeric(diamond_data["price"], errors="coerce")
 
 if "progress_stage" not in st.session_state:
     st.session_state.progress_stage = 0 
     st.session_state.start_time = None
-    st.session_state.answer_time_1 = None
+    st.session_state.answer_time_1 = None   
     st.session_state.answer_time_2 = None
     st.session_state.random_chart = None
 
