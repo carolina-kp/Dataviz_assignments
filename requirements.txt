@@ -1,7 +1,6 @@
+streamlit-gsheets
 streamlit==1.43.1
 seaborn==0.13.2
 pandas==2.2.3
 plotly==6.0.0
 matplotlib==3.10.1
-gspread==5.7.0
-google-auth==1.12.0
