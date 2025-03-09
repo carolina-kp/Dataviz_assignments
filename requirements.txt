@@ -1,6 +1,6 @@
 streamlit
 seaborn
 pandas
-numpy
 plotly
+matplotlib
 streamlit-gsheets
