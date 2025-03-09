@@ -88,8 +88,3 @@ if st.session_state.progress_stage == 3 and st.button("Reset Quiz"):
     st.session_state.answer_time_1 = None  
     st.session_state.answer_time_2 = None  
     st.rerun()  
-
-if st.session_state.progress_stage < 4:  
-    st.empty()
-    time.sleep(5)
-    st.rerun()
