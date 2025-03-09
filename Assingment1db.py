@@ -12,7 +12,7 @@ st.title("Database Design Questions: Diamond Market Analysis")
 st.write("Data automatically updates when Google Sheet changes")
 
 csv_url = "https://docs.google.com/spreadsheets/d/1UFaq5QBW6F1ulq38_FTOjRy-qDZQPosi4Zc10SbZG3U/export?format=csv"
-diamond_data = pd.read_csv(csv_url)
+diamond_data = pd.read_csv(csv_url, on_bad_lines="skip", encoding="utf-8")
 diamond_data["carat"] = pd.to_numeric(diamond_data["carat"], errors="coerce")
 diamond_data["price"] = pd.to_numeric(diamond_data["price"], errors="coerce")
 
