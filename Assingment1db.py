@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Diamond Market Analysis", layout="wide")
 
-st.title("Database Design Questions: Diamond Market Analysis")
+st.title("Database Visualization Questions: Diamond Market Analysis")
 st.write("Data automatically updates when Google Sheet changes")
 
 csv_url = "https://docs.google.com/spreadsheets/d/1UFaq5QBW6F1ulq38_FTOjRy-qDZQPosi4Zc10SbZG3U/export?format=csv"
